@@ -10,16 +10,16 @@ import React from 'react';
 // console.log (data)
 class App extends React.Component {
   render(){
-   
-
   
     return (
-      <div className="App">
+      // fragment we use it insted of other html tag <div>
+      <>
        <Headers/>
        <Mains />
        <Footers/>
+       <HornedBeast/>
        
-      </div>
+      </>
     );
   }
  

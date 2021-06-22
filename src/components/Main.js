@@ -1,6 +1,8 @@
-/* eslint-disable no-undef */
+
 import React from 'react';
 import HornedBeast from './HornedBeast';
+import mydata from './data.json'
+
 
 class Mains extends React.Component{
  render(){
@@ -8,15 +10,18 @@ class Mains extends React.Component{
          
          <div>
              
-        {mydata.map((horndata) => {
-          return (
+        {
+          mydata.map((beast,index)=>{
+            return (
             <HornedBeast
-              title={horndata.title} 
-              image_url={horndata.image_url}
-              description={horndata.description}
+               key={index}
+              title={beast.title} 
+              image_url={beast.image_url}
+              description={beast.description}
             />
           );
         })}
+
          </div>
      )
    };
