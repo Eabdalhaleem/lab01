@@ -1,7 +1,8 @@
 
 import React from 'react';
 import HornedBeast from './HornedBeast';
-import mydata from './data.json'
+
+
 
 
 class Mains extends React.Component{
@@ -11,7 +12,7 @@ class Mains extends React.Component{
          <div>
              
         {
-          mydata.map((beast,index)=>{
+          this.props.data.map((beast,index)=>{
             return (
             <HornedBeast
                key={index}

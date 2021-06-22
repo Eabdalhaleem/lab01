@@ -1,7 +1,14 @@
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Headers from './components/Header';
 import Mains from './components/Main';
 import Footers from './components/Footer';
 import HornedBeast from './components/HornedBeast';
+import data from './components/data.json';
+import SelectedBeast from './components/SelectedBeast';
+
+
+
 
 import './App.css';
 import React from 'react';
@@ -15,10 +22,10 @@ class App extends React.Component {
       // fragment we use it insted of other html tag <div>
       <>
        <Headers/>
-       <Mains />
+       <Mains  data={data}/>
        <Footers/>
        <HornedBeast/>
-       
+       <SelectedBeast show={this.show}/>
       </>
     );
   }
