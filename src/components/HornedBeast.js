@@ -6,35 +6,38 @@ class HornedBeast extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            click: 0
+            votes: 0
         }
     }
 
     // we use setState method responsible of change state
     clickNumber = () => {
         this.setState({
-            click: this.state.click + 1
+            votes: this.state.votes + 1
         })
 
 
     }
 
-    showClick = () => {
-        this.setState({
-            show:this.state.show
-        })
+    showDetils = () => {
+        this.props.handelOpen(true)
+        //  console.log(this.props)      
     }
+
     render() {
 
         return (
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={this.props.image_url} />
                 <Card.Body>
                     <Card.Title>{this.props.title}</Card.Title>
                     <Card.Text>
-                    {this.props.description}
+                        {this.props.description}
                     </Card.Text>
-                    <Button variant="primary">{this.showClick}</Button>
+                    <h3>{this.state.votes}</h3>
+                    <Button variant="primary" onClick={this.clickNumber}>vote</Button>
+                    <br /><br />
+                    <Button variant="danger" onClick={this.showDetils}>view</Button>
                 </Card.Body>
             </Card>
 

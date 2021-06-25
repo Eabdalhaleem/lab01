@@ -10,35 +10,39 @@ class SelectedBeast extends React.Component {
     }
 
 
+    handleClose = () => {
+        this.props.handleClose()
+    }
+// i have to call function
+    modelDetils = () => {
+        this.props.handleData()
 
-    handleClose = () => this.setState({ show: false })
-    handleShow = () => this.setState({ show: true })
+    }
+
     render() {
 
         return (
             <>
-                <Button variant="primary" onClick={this.handleShow}>
-                    Launch static backdrop modal
-                </Button>
+                <h1>{this.props.name}</h1>
 
                 <Modal
-                    show={this.state.show}
+                    show={this.props.display}
                     onHide={this.handleClose}
                     backdrop="static"
                     keyboard={false}
+
                 >
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal title</Modal.Title>
+                        <Modal.Title>{this.props.title}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        I will not close if you click outside me. Don't even try to press
-                        escape key.
+                        <img src={this.props.imgSrc} alt=""/>
+                        <p>{this.props.description}</p>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.handleClose}>
                             Close
                         </Button>
-                        <Button variant="primary">Understood</Button>
                     </Modal.Footer>
                 </Modal>
             </>
