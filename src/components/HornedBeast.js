@@ -19,10 +19,12 @@ class HornedBeast extends Component {
 
     }
 
-    showDetils = () => {
+    showDetils = (title,imageSrc,description) => {
         this.props.handelOpen(true)
+        this.props.handleData(title,imageSrc,description)
         //  console.log(this.props)      
     }
+    
 
     render() {
 
@@ -37,7 +39,7 @@ class HornedBeast extends Component {
                     <h3>{this.state.votes}</h3>
                     <Button variant="primary" onClick={this.clickNumber}>vote</Button>
                     <br /><br />
-                    <Button variant="danger" onClick={this.showDetils}>view</Button>
+                    <Button variant="danger" onClick={()=>this.showDetils(this.props.title,this.props.description,this.props.image_url)}>view</Button>
                 </Card.Body>
             </Card>
 

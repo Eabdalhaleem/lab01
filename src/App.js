@@ -39,7 +39,7 @@ class App extends React.Component {
     this.setState({
       title:title,
       description:description,
-      image:imgSrc
+      imgSrc:imgSrc
 
 
     })
@@ -51,9 +51,9 @@ class App extends React.Component {
       // fragment we use it insted of other html tag <div>
       <>
         <Headers />
-        <Mains data={data} handelOpen={this.handelOpen}/>
+        <Mains data={data} handelOpen={this.handelOpen} handleData={this.handleData}/>
         <Footers />
-        <SelectedBeast display={this.state.show} handleClose={this.handleClose} handleData={this.handleData} title={this.state.title}description={this.state.description} imgSrc={this.state.imgSrc}  />
+        <SelectedBeast display={this.state.show} handleClose={this.handleClose} title={this.state.title}description={this.state.description} imgSrc={this.state.imgSrc}  />
       </>
     );
   }

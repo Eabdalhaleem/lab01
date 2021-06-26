@@ -13,11 +13,6 @@ class SelectedBeast extends React.Component {
     handleClose = () => {
         this.props.handleClose()
     }
-// i have to call function
-    modelDetils = () => {
-        this.props.handleData()
-
-    }
 
     render() {
 
@@ -36,8 +31,10 @@ class SelectedBeast extends React.Component {
                         <Modal.Title>{this.props.title}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <img src={this.props.imgSrc} alt=""/>
-                        <p>{this.props.description}</p>
+                        <div>
+                            <img src={this.props.imgSrc} className="Modal-Body" alt="img" height="300px" width="300px" />
+                            <p>{this.props.description}</p>
+                        </div>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={this.handleClose}>
